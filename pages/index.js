@@ -1,8 +1,5 @@
 import Image from 'next/image'
 
-import Card from '../comps/card'
-import DetailUI from '../comps/DetailUI'
-
 import HeaderUI from '../comps/HeaderUI'
 import FooterUI from '../comps/FooterUI'
 
