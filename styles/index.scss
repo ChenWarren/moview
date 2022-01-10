@@ -1,18 +1,19 @@
+@import './config/color.scss';
 
-@mixin body {
+@mixin body($bg, $text) {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100vw;
     min-height: 100vw;
-    background-color: #00001a;
+    background-color: $bg;
 
     h1 {
-        color: #fff;
+        color: $text;
     }
 }
 
 
 .main-body-default {
-    @include body();
+    @include body($color_1, $color_10);
 }

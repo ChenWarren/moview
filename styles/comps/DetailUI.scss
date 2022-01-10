@@ -1,0 +1,115 @@
+@import '../config/color.scss';
+
+@mixin detail_base {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $color_10;
+
+    img {
+        width: 100%;
+    }
+}
+
+.detail_page {
+    @include detail_base()
+}
+
+.backdrop {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    h1 {
+        margin: 0;
+        position: absolute;
+        font-size: 3rem;
+        text-shadow: 1px 1px 1px $color_1;
+        padding: 25px 20px;
+        
+        @media (max-width: 600px) {
+            font-size: 2rem;
+            padding: 15px 10px;
+        }
+    }
+}
+
+.detail_head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px;
+    transform: translate(0px, -70px);
+
+    p {
+        font-size: 1.2rem;
+        text-shadow: 1px 1px 1px $color_1;
+    }
+
+    @media (max-width: 600px) {
+
+        transform: translate(0px, -40px);
+
+        p {
+            font-size: 0.8rem;
+        }
+    }
+
+}
+
+.genres {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media (max-width: 600px) {
+        width: 70%;
+    }
+}
+
+.overview {
+    width: 100%;
+    padding: 0 15px;
+    transform: translate(0px, -60px);
+    line-height: 1.5rem;
+    
+    h4{
+        color: $color_7;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 0.8rem;
+        transform: translate(0px, -40px);
+    }
+}
+
+.production {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    p {
+        color: $color_9;
+    }
+
+    @media (max-width: 600px) {
+        width: 80%;
+    }
+}
+
+.release {
+    width: 100%;
+
+    p {
+        color: $color_9;
+    }
+}
+
+.devider {
+    width: 100%;
+    height: 5px;
+    border-bottom: 1px solid $color_9;
+}
