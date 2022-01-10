@@ -1,0 +1,58 @@
+@import '../config/color.scss';
+
+@mixin header_base {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        height: 100%;
+    }
+}
+
+.header_default {
+    @include header_base()
+
+    
+}
+
+.navbar {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 15px;
+
+    @media (max-width: 600px) {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.logo {
+    width: 150px;
+    margin-right: 20px;
+
+    @media (max-width: 600px) {
+        width: 100px;
+        margin-right: 0;
+    }
+
+}
+
+.menu {
+    color: $color_10;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2rem;
+
+    @media (max-width: 600px) {
+        font-size: 1rem;
+    }
+}
