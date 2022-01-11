@@ -1,0 +1,24 @@
+@import '../config/color.scss';
+
+
+.lists_wrap {
+    max-width: 2000px;
+    transform: translate(0px, -100px);
+
+    @media (max-width: 600px) {
+        transform: translate(0px, -50px);
+    }
+}
+
+.card_wrap {
+    max-width: 2000px;
+    width: '100%';
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
+}

@@ -2,5 +2,7 @@ module.exports = {
   reactStrictMode: true,
   env: {
     API_KEY: '7f5a331a49e1c74a3e9968d91118c138',
+    BASE_URL: 'https://api.themoviedb.org/3/movie/',
+    PUBLIC_URL: 'https://www.themoviedb.org/t/p/original'
   }
 }

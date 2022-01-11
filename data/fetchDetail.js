@@ -2,7 +2,7 @@
 
 const fetchDetail = async (id) => {
 
-    const BASE = 'https://api.themoviedb.org/3/movie/'
+    const BASE = process.env.BASE_URL
     const KEY = '?api_key='+process.env.API_KEY
     const FETCH_URL =BASE+id+KEY+'&language=en-US'
 
@@ -17,7 +17,7 @@ const fetchDetail = async (id) => {
 
 export default fetchDetail
 
-class MovieDetail {
+export class MovieDetail {
     constructor(id, title, overview, backdrop, genres=[], homepage, production=[], release, vote_rate){
         this.id = id
         this.title = title
