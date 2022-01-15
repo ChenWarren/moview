@@ -3,7 +3,7 @@ import test_data from '../../data/test_data'
 const Card = ({
     imgUrl = test_data.imgUrl,
     m_name= test_data.m_name,
-    handleClick=()=>{},
+    handleClick=()=>{console.log('card')},
     overview= test_data.overview,
     vote_rate= test_data.vote_rate,
     release_date=test_data.release_date,
@@ -26,7 +26,7 @@ const Card = ({
                     {overview.substring(0, 195)} ......
                 </p>
                 <div className="card_bottom">
-                    <button>More</button>
+                    <button onClick={handleClick}>More</button>
                 </div>
             </div>
         </div>

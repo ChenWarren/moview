@@ -28,8 +28,13 @@ export default function Home() {
   return (
     <div className='main-body-default'>
       <HeaderUI/>
-      <ShowcaseUI list={showcaseData}/>
-      <ListUI listText='Popular'/> 
+      <div className='main-container'>
+        <ShowcaseUI list={showcaseData}/>
+        <ListUI listText='Popular'/> 
+        <ListUI listText='Top Rated'/> 
+        <ListUI listText='New Trending'/> 
+        <ListUI listText='Upcomeing'/> 
+      </div>
       <FooterUI/>
     </div>
   )
