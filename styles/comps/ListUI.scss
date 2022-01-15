@@ -20,5 +20,29 @@
 
     @media (max-width: 600px) {
         flex-direction: column;
+        align-items: center;
     }
+}
+
+.lists_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 600px) {
+        padding: 0 10px;
+    }
+}
+
+.load_more {
+    color: $color_10;
+    font-weight: normal;
+    font-size: 1.3rem;
+    padding-left: 50px;
+    padding-top: 10px;
+}
+
+.load_more:hover {
+    color: $color_9;
 }
