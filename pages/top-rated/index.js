@@ -1,6 +1,6 @@
-import HeaderUI from "../comps/HeaderUI"
-import ListUI from "../comps/ListUI"
-import FooterUI from "../comps/FooterUI"
+import HeaderUI from "../../comps/HeaderUI"
+import ListUI from "../../comps/ListUI"
+import FooterUI from "../../comps/FooterUI"
 
 const topRated = () => {
     return (

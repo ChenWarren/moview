@@ -10,6 +10,9 @@ const ListUI = ({
     loadRout = '/'
 }) => {
     const router = useRouter()
+    const PATH = process.env.PUBLIC_URL
+
+    console.log(lists[0])
 
     return (
         <div className='lists_wrap'>
@@ -24,15 +27,11 @@ const ListUI = ({
                 </div>
             </div>
             <div className='card_wrap'>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
+                { lists.map((item) => {
+                    return (
+                    <Card key={item.id} imgUrl={PATH + item.poster_path} m_name={item.original_title} overview={item.overview} vote_rate={item.vote_average} release_date={item.release_date} title={item.title}/> )
+                })}
+
             </div>
         </div>
     )

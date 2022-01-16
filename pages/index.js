@@ -9,22 +9,23 @@ import DetailUI from '../comps/DetailUI'
 
 import fetchData from '../data/fetchList'
 
+import test_data from '../data/test_data'
+import test_list from '../data/test_list'
 
 export default function Home() {
 
-  const [showcaseData, setShowcaseData] = useState()
-  const [popularList, setPopularList] = useState()
+  const [showcaseData, setShowcaseData] = useState(test_data)
+  const [popularList, setPopularList] = useState(test_list)
 
-  // const fetchList = async()=> {
-  //   const movielists = await fetchData('popular', '1')
-  //   setPopularList(movielists)
-  //   setShowcaseData(movielists[0])
-  // }
+  const fetchList = async()=> {
+    const movielists = await fetchData('popular', '1')
+    setPopularList(movielists)
+    setShowcaseData(movielists[0])
+  }
 
-  // useEffect(()=> {
-  //   fetchList()
-  // }, [])
-  
+  useEffect(()=> {
+    fetchList()
+  }, [])
 
   return (
     <div className='main-body-default'>
@@ -32,10 +33,10 @@ export default function Home() {
       <div className='main-container'>
         {/* <DetailUI/> */}
         <ShowcaseUI list={showcaseData}/>
-        <ListUI listText='Popular' loadRout='/popular'/> 
-        <ListUI listText='Trending' loadRout='/trending'/> 
-        <ListUI listText='Top-Rated' loadRout='/top-rated'/> 
-        <ListUI listText='Upcoming' loadRout='/upcoming'/> 
+        <ListUI lists={popularList} listText='Popular' loadRout='/popular'/> 
+        <ListUI lists={popularList} listText='Trending' loadRout='/trending'/> 
+        <ListUI lists={popularList} listText='Top-Rated' loadRout='/top-rated'/> 
+        <ListUI lists={popularList} listText='Upcoming' loadRout='/upcoming'/> 
       </div>
       <FooterUI/>
     </div>
