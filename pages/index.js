@@ -32,10 +32,10 @@ export default function Home() {
       <div className='main-container'>
         {/* <DetailUI/> */}
         <ShowcaseUI list={showcaseData}/>
-        <ListUI listText='Popular'/> 
-        <ListUI listText='Trending'/> 
-        <ListUI listText='Top-Rated'/> 
-        <ListUI listText='Upcomeing'/> 
+        <ListUI listText='Popular' loadRout='/popular'/> 
+        <ListUI listText='Trending' loadRout='/trending'/> 
+        <ListUI listText='Top-Rated' loadRout='/top-rated'/> 
+        <ListUI listText='Upcoming' loadRout='/upcoming'/> 
       </div>
       <FooterUI/>
     </div>

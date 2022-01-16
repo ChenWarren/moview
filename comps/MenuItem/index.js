@@ -1,11 +1,15 @@
+import { useRouter } from "next/router"
 
 const MenuItem = ({
     menuText='Menu',
-    handleClick=()=>{},
+    rout='/',
 }) => {
+
+    const router = useRouter()
+
     return (
-        <div className="menu_item">
-            <p onClick={handleClick}>{menuText}</p>
+        <div onClick={()=>{router.push(rout)}} className="menu_item">
+            <p >{menuText}</p>
         </div>
     )
 }
