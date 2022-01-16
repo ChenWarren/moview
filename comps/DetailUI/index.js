@@ -20,8 +20,10 @@ const DetailUI = () => {
             <div className="detail_page">
 
                 <div className="backdrop">
-                    <img src={`https://www.themoviedb.org/t/p/original${detail.backdrop}`}/>
-                    <h1>{detail.title}</h1>
+                    <div className="mask1">
+                        <img src={`https://www.themoviedb.org/t/p/original${detail.backdrop}`}/>
+                        <h1>{detail.title}</h1>
+                    </div>
                 </div>
 
                 <div className="detail_head">

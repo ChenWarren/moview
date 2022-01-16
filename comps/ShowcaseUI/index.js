@@ -11,8 +11,10 @@ const ShowcaseUI = ({
 
     return (
         <div onClick={clickShowcase} className="showcase">
-            <img className="show_image" src="https://www.themoviedb.org/t/p/original/eNI7PtK6DEYgZmHWP9gQNuff8pv.jpg"/>
-            {/* <img className="show_image" src={`${process.env.PUBLIC_URL+path}`}/> */}
+            <div className="mask1">
+                <img className="show_image" src="https://www.themoviedb.org/t/p/original/eNI7PtK6DEYgZmHWP9gQNuff8pv.jpg"/>
+                {/* <img className="show_image" src={`${process.env.PUBLIC_URL+path}`}/> */}
+            </div>
             <div className="showcaseHead">
                 <h1 className="showcaseH1">{list.title}</h1> 
             </div>
