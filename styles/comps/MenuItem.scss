@@ -1,12 +1,10 @@
 @import '../config/color.scss';
 
 .menu_item {
-    width: 120px;
-    padding: 15px;
+    width: 150px;
     font-size: 1.2rem;
-
     p {
-        text-align: center;
+        text-align:right;
         color: $color_10;
     }
 

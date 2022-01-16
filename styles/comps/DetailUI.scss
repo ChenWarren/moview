@@ -40,10 +40,10 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 0 20px;
-    transform: translate(0px, -70px);
+    transform: translate(0px, -80px);
 
     p {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         text-shadow: 1px 1px 1px $color_1;
     }
 
@@ -60,6 +60,7 @@
 
 .genres {
     width: 40%;
+    // font-size: 1.2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -72,7 +73,7 @@
 .overview {
     width: 100%;
     padding: 0 15px;
-    transform: translate(0px, -60px);
+    transform: translate(0px, -70px);
     line-height: 1.5rem;
     
     h4{
