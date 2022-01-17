@@ -16,11 +16,22 @@ export default function Home() {
 
   const [showcaseData, setShowcaseData] = useState(test_data)
   const [popularList, setPopularList] = useState(test_list)
+  const [trendingList, setTrendingList] = useState(test_list)
+  const [topRatedList, setTopRatedList] = useState(test_list)
+  const [upcomingList, setUpcomingList] = useState(test_list)
+
 
   const fetchList = async()=> {
-    const movielists = await fetchData('popular', '1')
-    setPopularList(movielists)
-    setShowcaseData(movielists[0])
+    const popular = await fetchData('popular', '1')
+    const trending = await fetchData('now_playing', '1')
+    const toprated = await fetchData('top_rated', '1')
+    const upcoming = await fetchData('upcoming', '1')
+ 
+    setPopularList(popular)
+    setShowcaseData(popular[0])
+    setTrendingList(trending)
+    setTopRatedList(toprated)
+    setUpcomingList(upcoming)
   }
 
   useEffect(()=> {
@@ -34,9 +45,9 @@ export default function Home() {
         {/* <DetailUI/> */}
         <ShowcaseUI list={showcaseData}/>
         <ListUI lists={popularList} listText='Popular' loadRout='/popular'/> 
-        <ListUI lists={popularList} listText='Trending' loadRout='/trending'/> 
-        <ListUI lists={popularList} listText='Top-Rated' loadRout='/top-rated'/> 
-        <ListUI lists={popularList} listText='Upcoming' loadRout='/upcoming'/> 
+        <ListUI lists={topRatedList} listText='Top-Rated' loadRout='/top-rated'/> 
+        <ListUI lists={trendingList} listText='Trending' loadRout='/trending'/> 
+        <ListUI lists={upcomingList} listText='Upcoming' loadRout='/upcoming'/> 
       </div>
       <FooterUI/>
     </div>
