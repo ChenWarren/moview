@@ -12,7 +12,8 @@ const Trending = () => {
 
     const fetchList = async()=> {
         const trending = await fetchData('now_playing', '1')
-        setList(trending)
+        const trending1 = await fetchData('now_playing', '2')
+        setList(trending.concat(trending1))
     }
     
     useEffect(()=>{

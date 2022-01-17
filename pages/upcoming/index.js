@@ -12,7 +12,8 @@ const Upcoming = () => {
 
     const fetchList = async()=> {
         const upcoming = await fetchData('upcoming', '1')
-        setList(upcoming)
+        const upcoming1 = await fetchData('upcoming', '2')
+        setList(upcoming.concat(upcoming1))
     }
     
     useEffect(()=>{

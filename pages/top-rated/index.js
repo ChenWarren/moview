@@ -12,7 +12,8 @@ const Top_rated = () => {
 
     const fetchList = async()=> {
         const top_rated = await fetchData('top_rated', '1')
-        setList(top_rated)
+        const top_rated1 = await fetchData('top_rated', '2')
+        setList(top_rated.concat(top_rated1))
     }
     
     useEffect(()=>{

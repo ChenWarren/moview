@@ -12,7 +12,9 @@ const Popular = () => {
 
     const fetchList = async()=> {
         const popular = await fetchData('popular', '1')
-        setList(popular)
+        const popular1 = await fetchData('popular', '2')
+
+        setList(popular.concat(popular1))
     }
     
     useEffect(()=>{
