@@ -1,18 +1,33 @@
+import { useEffect, useState } from "react"
+
 import HeaderUI from "../../comps/HeaderUI"
 import ListUI from "../../comps/ListUI"
 import FooterUI from "../../comps/FooterUI"
 
-const topRated = () => {
+import fetchData from "../../data/fetchList"
+
+const top_rated = () => {
+
+    const [list, setList] = useState()
+
+    const fetchList = async()=> {
+        const top_rated = await fetchData('top_rated', '1')
+        setList(top_rated)
+    }
+    
+    useEffect(()=>{
+        fetchList()
+    },[])
+
     return (
         <div className='main-body-default'>
             <HeaderUI/>
             <div className='main-container'>
-            {/* <DetailUI/> */}
-            <ListUI listText='Top-Rated' displayMore="none"/> 
+                {list? <ListUI wrap="card_wrap_l" lists={list} listText='Top-Rated' displayMore="none"/> : <p>Loading....</p> }
             </div>
             <FooterUI/>
         </div>
     )
 }
 
-export default topRated
+export default top_rated

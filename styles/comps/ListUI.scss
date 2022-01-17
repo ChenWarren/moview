@@ -7,7 +7,7 @@
     padding-bottom: 20px;
 
     @media (max-width: 600px) {
-        transform: translate(0px, -50px);
+        // transform: translate(0px, -50px);
     }
 }
 
@@ -47,4 +47,18 @@
 
 .load_more:hover {
     color: $color_9;
+}
+
+.card_wrap_l {
+    max-width: 2000px;
+    width: '100%';
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+    }
 }

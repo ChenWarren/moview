@@ -7,12 +7,12 @@ const ListUI = ({
     lists=[],
     listText='List Title',
     displayMore='flex',
-    loadRout = '/'
+    loadRout = '/',
+    wrap='card_wrap'
 }) => {
     const router = useRouter()
     const PATH = process.env.PUBLIC_URL
 
-    console.log(lists[0])
 
     return (
         <div className='lists_wrap'>
@@ -26,7 +26,7 @@ const ListUI = ({
                     Load more &#9654;&#9654;
                 </div>
             </div>
-            <div className='card_wrap'>
+            <div className={wrap}>
                 { lists.map((item) => {
                     return (
                     <Card key={item.id} imgUrl={PATH + item.poster_path} m_name={item.original_title} overview={item.overview} vote_rate={item.vote_average} release_date={item.release_date} title={item.title}/> )
