@@ -6,7 +6,7 @@ import FooterUI from "../../comps/FooterUI"
 
 import fetchData from "../../data/fetchList"
 
-const popular = () => {
+const Popular = () => {
 
     const [list, setList] = useState()
 
@@ -30,4 +30,4 @@ const popular = () => {
     )
 }
 
-export default popular
+export default Popular

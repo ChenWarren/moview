@@ -6,7 +6,7 @@ import FooterUI from "../../comps/FooterUI"
 
 import fetchData from "../../data/fetchList"
 
-const trending = () => {
+const Trending = () => {
 
     const [list, setList] = useState()
 
@@ -30,4 +30,4 @@ const trending = () => {
     )
 }
 
-export default trending
+export default Trending

@@ -6,7 +6,7 @@ import FooterUI from "../../comps/FooterUI"
 
 import fetchData from "../../data/fetchList"
 
-const top_rated = () => {
+const Top_rated = () => {
 
     const [list, setList] = useState()
 
@@ -30,4 +30,4 @@ const top_rated = () => {
     )
 }
 
-export default top_rated
+export default Top_rated

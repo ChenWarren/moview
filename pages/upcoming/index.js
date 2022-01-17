@@ -6,7 +6,7 @@ import FooterUI from "../../comps/FooterUI"
 
 import fetchData from "../../data/fetchList"
 
-const upcoming = () => {
+const Upcoming = () => {
 
     const [list, setList] = useState()
 
@@ -30,4 +30,4 @@ const upcoming = () => {
     )
 }
 
-export default upcoming
+export default Upcoming
