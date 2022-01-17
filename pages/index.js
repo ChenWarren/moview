@@ -1,24 +1,22 @@
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 import HeaderUI from '../comps/HeaderUI'
 import ShowcaseUI from '../comps/ShowcaseUI'
 import FooterUI from '../comps/FooterUI'
 import ListUI from '../comps/ListUI'
-import DetailUI from '../comps/DetailUI'
 
 import fetchData from '../data/fetchList'
 
-import test_data from '../data/test_data'
-import test_list from '../data/test_list'
+// import test_data from '../data/test_data'
+// import test_list from '../data/test_list'
 
 export default function Home() {
 
-  const [showcaseData, setShowcaseData] = useState(test_data)
-  const [popularList, setPopularList] = useState(test_list)
-  const [trendingList, setTrendingList] = useState(test_list)
-  const [topRatedList, setTopRatedList] = useState(test_list)
-  const [upcomingList, setUpcomingList] = useState(test_list)
+  const [showcaseData, setShowcaseData] = useState()
+  const [popularList, setPopularList] = useState()
+  const [trendingList, setTrendingList] = useState()
+  const [topRatedList, setTopRatedList] = useState()
+  const [upcomingList, setUpcomingList] = useState()
 
 
   const fetchList = async()=> {
