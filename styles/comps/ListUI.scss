@@ -23,6 +23,11 @@
         flex-direction: column;
         align-items: center;
     }
+
+    @media (max-width: 1200px) {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 .lists_header {
@@ -60,5 +65,9 @@
     @media (max-width: 600px) {
         flex-direction: column;
         align-items: center;
+    }
+    @media (max-width: 1200px) {
+        width: 100%;
+        justify-content: center;
     }
 }

@@ -26,5 +26,11 @@
 
     @media (max-width: 600px) {
         width: 100%;
+        justify-content: center;
+    }
+
+    @media (max-width: 1200px) {
+        width: 100%;
+        justify-content: center;
     }
 }
