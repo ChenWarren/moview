@@ -43,8 +43,8 @@ export default function Home() {
         {/* <DetailUI/> */}
         <ShowcaseUI list={showcaseData}/>
         <ListUI lists={popularList} listText='Popular' loadRout='/popular'/> 
-        <ListUI lists={topRatedList} listText='Top-Rated' loadRout='/top-rated'/> 
-        <ListUI lists={trendingList} listText='Trending' loadRout='/trending'/> 
+        <ListUI lists={topRatedList} listText='Top-Rated' loadRout='/top_rated'/> 
+        <ListUI lists={trendingList} listText='Trending' loadRout='/now_playing'/> 
         <ListUI lists={upcomingList} listText='Upcoming' loadRout='/upcoming'/> 
       </div>
       <FooterUI/>

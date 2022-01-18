@@ -15,8 +15,8 @@ const HeaderUI = () => {
 
                 <div className="menu">
                     <MenuItem menuText="Popular" rout="/popular"/>
-                    <MenuItem menuText="Trending" rout="/trending"/>
-                    <MenuItem menuText="Top-Rated" rout="/top-rated"/>
+                    <MenuItem menuText="Trending" rout="/now_playing"/>
+                    <MenuItem menuText="Top-Rated" rout="/top_rated"/>
                     <MenuItem menuText="Upcoming" rout="/upcoming"/>
                 </div>
 
