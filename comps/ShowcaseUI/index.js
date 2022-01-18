@@ -1,18 +1,22 @@
-import { urlObjectKeys } from "next/dist/shared/lib/utils"
-import { useState } from "react"
-
+import { useRouter } from "next/router"
 
 const ShowcaseUI = ({
     list={title: 'Spider-Man: No Way Home'},
-    clickShowcase =()=>{console.log('clicked')},
 }) => {
 
+    const router = useRouter()
     const path = list.backdrop_path
+    
+    const clickShowcase = ()=>{
+        router.push({
+            pathname: '/movie/[id]',
+            query: {id: list.id}
+        })
+    }
 
     return (
         <div onClick={clickShowcase} className="showcase">
             <div className="mask1">
-                {/* <img className="show_image" src="https://www.themoviedb.org/t/p/original/eNI7PtK6DEYgZmHWP9gQNuff8pv.jpg"/> */}
                 <img className="show_image" src={`${process.env.PUBLIC_URL+path}`}/>
             </div>
             <div className="showcaseHead">

@@ -1,22 +1,11 @@
-import { useEffect, useState } from "react";
-import fetchDetail from "../../data/fetchDetail"
 
-const DetailUI = () => {
-
-    const [detail, setDetail] = useState()
-
-    const data = async() => {
-       const result = await fetchDetail('634649') 
-       setDetail(result)
-    } 
-
-    useEffect(() => {
-        data()
-    },[])
+const DetailUI = ({
+    detail
+}) => {
 
     return (
         <div className="detail_page">
-        { detail? 
+
             <div className="detail_page">
 
                 <div className="backdrop">
@@ -55,9 +44,7 @@ const DetailUI = () => {
                 </div>
                 
             </div>
-            :
-            <p>Loading...</p>
-        }
+
         </div>
     )
 }

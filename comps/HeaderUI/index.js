@@ -9,7 +9,7 @@ const HeaderUI = () => {
         <div className="header_default">
             <div className="navbar">
                 <img 
-                    className="logo" src="moview_logo.svg"
+                    className="logo" src="/moview_logo.svg"
                     onClick={()=> router.push('/')}
                 />
 
