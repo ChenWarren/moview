@@ -27,7 +27,11 @@ const Detail = () => {
         <div className='main-body-default'>
             <HeaderUI/>
             <div className='main-container'>
-                {detail? <DetailUI detail={detail}/> : <p>Loading....</p> }
+                {detail? 
+                    <DetailUI detail={detail}/> 
+                    : 
+                    null 
+                    }
             </div>
             <FooterUI/>
         </div>

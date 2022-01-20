@@ -29,7 +29,11 @@ const Category = () => {
         <div className='main-body-default'>
             <HeaderUI/>
             <div className='main-container'>
-                {list? <ListUI wrap="card_wrap_l" lists={list} listText='Popular' displayMore="none"/> : <p>Loading....</p> }
+                {list? 
+                    <ListUI wrap="card_wrap_l" lists={list} listText='Popular' displayMore="none"/> 
+                    : 
+                    null
+                }
             </div>
             <FooterUI/>
         </div>

@@ -40,12 +40,31 @@ export default function Home() {
     <div className='main-body-default'>
       <HeaderUI/>
       <div className='main-container'>
-        {/* <DetailUI/> */}
-        <ShowcaseUI list={showcaseData}/>
-        <ListUI lists={popularList} listText='Popular' loadRout='/popular'/> 
-        <ListUI lists={topRatedList} listText='Top-Rated' loadRout='/top_rated'/> 
-        <ListUI lists={trendingList} listText='Trending' loadRout='/now_playing'/> 
-        <ListUI lists={upcomingList} listText='Upcoming' loadRout='/upcoming'/> 
+        { showcaseData?
+          <ShowcaseUI list={showcaseData}/>
+          :
+          null 
+        }
+        {popularList?
+          <ListUI lists={popularList} listText='Popular' loadRout='/popular'/>
+          :
+          null
+        }
+        {topRatedList? 
+          <ListUI lists={topRatedList} listText='Top-Rated' loadRout='/top_rated'/>
+          :
+          null
+        }
+        {trendingList?
+          <ListUI lists={trendingList} listText='Trending' loadRout='/now_playing'/>
+          :
+          null
+        }
+        {upcomingList? 
+          <ListUI lists={upcomingList} listText='Upcoming' loadRout='/upcoming'/>
+          :
+          null
+        } 
       </div>
       <FooterUI/>
     </div>
