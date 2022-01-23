@@ -1,6 +1,7 @@
+import ListUI from "../ListUI";
 
 const DetailUI = ({
-    detail
+    detail,
 }) => {
 
     return (
