@@ -7,8 +7,6 @@ import ListUI from '../comps/ListUI'
 
 import fetchData from '../data/fetchList'
 
-// import test_data from '../data/test_data'
-// import test_list from '../data/test_list'
 
 export default function Home() {
 
@@ -70,3 +68,10 @@ export default function Home() {
     </div>
   )
 }
+
+export const Categories = [
+  { id: 1, menu: 'Popular', rout: '/popular', fetchKey: 'popular'},
+  { id: 2, menu: 'Trending', rout: '/now_playing', fetchKey: 'now_playing'},
+  { id: 3, menu: 'Top-Rated', rout: '/top_rated', fetchKey: 'top_rated'},
+  { id: 4, menu: 'Upcoming', rout: '/upcoming', fetchKey: 'upcoming'},
+]

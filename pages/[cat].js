@@ -6,17 +6,21 @@ import ListUI from "../comps/ListUI"
 import FooterUI from "../comps/FooterUI"
 
 import fetchData from "../data/fetchList"
+import { Categories } from "."
 
 const Category = () => {
 
     const [list, setList] = useState()
+    const [page, setPage] = useState(1)
     const router =useRouter()
 
     const qr = router.query.cat
+    const menu = Categories.filter((item)=>(item.fetchKey === qr ))[0].menu
+
 
     const fetchList = async(q)=> {
-        const data = await fetchData(q, '1')
-        const data1 = await fetchData(q, '2')
+        const data = await fetchData(q, page)
+        const data1 = await fetchData(q, page+1)
         
         setList(data.concat(data1))
     }
@@ -30,7 +34,7 @@ const Category = () => {
             <HeaderUI/>
             <div className='main-container'>
                 {list? 
-                    <ListUI wrap="card_wrap_l" lists={list} listText='Popular' displayMore="none"/> 
+                    <ListUI wrap="card_wrap_l" lists={list} listText={menu} displayMore="none"/> 
                     : 
                     null
                 }
