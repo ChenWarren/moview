@@ -2,7 +2,7 @@
 import { useRouter } from "next/router"
 import MenuItem from "../MenuItem"
 
-import { Categories } from "../../pages"
+import { Categories } from "../../pages/index"
 
 const HeaderUI = () => {
     const router = useRouter()
@@ -18,7 +18,7 @@ const HeaderUI = () => {
 
                 <div className="menu">
                     { Categories.map((item) => {
-                        return <MenuItem menuText={item.menu} rout={item.rout}/>
+                        return <MenuItem key={item.id} menuText={item.menu} rout={item.rout}/>
                     })}
                 </div>
 

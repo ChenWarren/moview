@@ -10,7 +10,7 @@ const fetchData = async (key, p) => {
     if(!res.ok) throw Error('Did not receive data.')
     const json = await res.json()
 
-    return json.results
+    return { "result": json.results, 'page': json.page, 'total': json.total_pages }
 
 }
 

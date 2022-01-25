@@ -9,33 +9,10 @@ const ListUI = ({
     listText='List Title',
     displayMore='flex',
     loadRout = '/',
-    wrap='card_wrap'
+    wrap='card_wrap',
 }) => {
     const router = useRouter()
     const PATH = process.env.PUBLIC_URL
-
-    const lastItemRef = useRef()
-    const [isVisible, setIsVisible] = useState(false)
-
-    const refCallBack = (entries) => {
-        const [ entry ] = entries
-        setIsVisible(entry.isIntersecting)
-    }
-
-    const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 1.0
-    }
-
-    useEffect(()=>{
-        const observer = new IntersectionObserver(refCallBack, options)
-        if(lastItemRef.current) observer.observe(lastItemRef.current)
-
-        return ()=> {
-            if(lastItemRef.current) observer.observe(lastItemRef.current)
-        }
-    }, [lastItemRef, options])
 
     return (
         <div className='lists_wrap'>
@@ -50,22 +27,12 @@ const ListUI = ({
                 </div>
             </div>
             <div className={wrap}>
-                {isVisible? <p>Yes</p> : <p>No</p>}
-                { lists.map((item, index) => {
-                    if(lists.length === index +1 && wrap =='card_wrap_l'){
-                        return (
-                            <div ref={lastItemRef}>
-                                <Card key={item.id} imgUrl={PATH + item.poster_path} m_name={item.original_title} overview={item.overview} vote_rate={item.vote_average} release_date={item.release_date} title={item.title} id={item.id}/>
-                            </div>
-                        )
-                    } else {
-
-                        return (
-                            <Card key={item.id} imgUrl={PATH + item.poster_path} m_name={item.original_title} overview={item.overview} vote_rate={item.vote_average} release_date={item.release_date} title={item.title} id={item.id}/> 
-                        )
-                    }
-                })}
-                <div id='bottom'></div>
+                { lists.map((item) => {
+                    return (
+                        <Card key={item.id} imgUrl={PATH + item.poster_path} m_name={item.original_title} overview={item.overview} vote_rate={item.vote_average} release_date={item.release_date} title={item.title} id={item.id}/> 
+                    )
+                })
+                }
             </div>
         </div>
     )

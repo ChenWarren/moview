@@ -2,30 +2,53 @@ import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 
 import HeaderUI from "../comps/HeaderUI"
-import ListUI from "../comps/ListUI"
+import LongList from "../comps/LongList"
 import FooterUI from "../comps/FooterUI"
 
 import fetchData from "../data/fetchList"
-import { Categories } from "."
+import { Categories } from "./index"
 
 const Category = () => {
-
-    const [list, setList] = useState()
-    const [page, setPage] = useState(1)
+    
     const router =useRouter()
-
     const qr = router.query.cat
+
+    const [list, setList] = useState([])
+    const [menuText, setMenuText] = useState('Popular')
+    const [page, setPage] = useState(1)
+    const [count, setCount] = useState(1)
+    const [totalPages, setTotalPages] = useState(0)
+    const [isVisible, setIsVisible] = useState(false)
+
     const menu = Categories.filter((item)=>(item.fetchKey === qr ))[0].menu
-
-
-    const fetchList = async(q)=> {
-        const data = await fetchData(q, page)
-        const data1 = await fetchData(q, page+1)
+    
+    const fetchList = async(q, p)=> {
+        const data = await fetchData(q, p)
+        setMenuText(menu)
         
-        setList(data.concat(data1))
+        setList(prevList => prevList.concat(data.result))
+        setTotalPages(data.total)
     }
+
+    const clean = () => {
+        setList([])
+        setCount(1)
+        setPage(1)
+        setTotalPages(0)  
+    }
+
     useEffect(()=>{
-        fetchList(qr)
+        if(isVisible===true){
+            console.log(page, qr)
+            setPage(prev=>prev+1)
+            fetchList(qr, page+1)
+        }
+    },[isVisible])
+
+    useEffect(()=>{
+        clean()
+        console.log(list, count, page, totalPages)
+        fetchList(qr, page)
     }, [qr])
 
 
@@ -34,7 +57,7 @@ const Category = () => {
             <HeaderUI/>
             <div className='main-container'>
                 {list? 
-                    <ListUI wrap="card_wrap_l" lists={list} listText={menu} displayMore="none"/> 
+                    <LongList lists={list} listText={menuText} displayMore="none" isVisible={isVisible} setIsVisible={setIsVisible} setPage={setPage}/> 
                     : 
                     null
                 }

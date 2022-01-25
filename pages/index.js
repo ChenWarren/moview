@@ -23,11 +23,11 @@ export default function Home() {
     const toprated = await fetchData('top_rated', '1')
     const upcoming = await fetchData('upcoming', '1')
  
-    setPopularList(popular)
-    setShowcaseData(popular[0])
-    setTrendingList(trending)
-    setTopRatedList(toprated)
-    setUpcomingList(upcoming)
+    setPopularList(popular.result)
+    setShowcaseData(popular.result[0])
+    setTrendingList(trending.result)
+    setTopRatedList(toprated.result)
+    setUpcomingList(upcoming.result)
   }
 
   useEffect(()=> {
