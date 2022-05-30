@@ -1,11 +1,8 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 import { useRouter } from "next/router"
-
 import HeaderUI from "../comps/HeaderUI"
 import LongList from "../comps/LongList"
 import FooterUI from "../comps/FooterUI"
-
-import fetchData from "../data/fetchList"
 import { Categories } from "./index"
 
 const Category = () => {  
@@ -18,13 +15,14 @@ const Category = () => {
     const [totalPages, setTotalPages] = useState(0)
     const [isVisible, setIsVisible] = useState(false)
 
-    const fetchList = async(q, p)=> {
-        const menuStr = Categories.filter((item)=>(item.fetchKey === qr))[0].menu
-        const data = await fetchData(q, p)
+    const fetchList = useCallback( async (q, p)=> {
+        const menuStr = Categories.filter((item)=>(item.fetchKey === q))[0].menu
+        const result = await fetch(`/api/getlist/?cat=${q}&p=${p}`)
+        const data = await result.json()
         setMenuText(menuStr)
         setList(prevList => prevList.concat(data.result))
         setTotalPages(data.total)
-    }
+    }, [qr, page])
 
     const clean = () => {
         setList([])
@@ -51,11 +49,7 @@ const Category = () => {
         <div className='main-body-default'>
             <HeaderUI/>
             <div className='main-container'>
-                {list? 
-                    <LongList lists={list} listText={menuText} displayMore="none" isVisible={isVisible} setIsVisible={setIsVisible} setPage={setPage}/> 
-                    : 
-                    null
-                }
+                {list.length !=0 && <LongList lists={list} listText={menuText} displayMore="none" isVisible={isVisible} setIsVisible={setIsVisible} setPage={setPage}/> }
             </div>
             <FooterUI/>
         </div>

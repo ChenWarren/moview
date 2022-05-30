@@ -27,10 +27,6 @@ const LognList = ({
     }
 
     useEffect(()=>{
-        console.log('load')
-    },[])
-
-    useEffect(()=>{
         const observer = new IntersectionObserver(refCallBack, options)
         if(lastItemRef.current) observer.observe(lastItemRef.current)
 
@@ -38,7 +34,6 @@ const LognList = ({
             if(lastItemRef.current) observer.observe(lastItemRef.current)
         }
     }, [lastItemRef, options])
-
 
     return (
         <div className='lists_wrap'>

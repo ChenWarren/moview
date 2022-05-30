@@ -1,4 +1,3 @@
-
 // fetch movie details
 // id: string
 const fetchDetail = async (id) => {
