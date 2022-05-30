@@ -1,3 +1,4 @@
+
 ## Getting Started
 
 Moview is a movie info web for browning trending movies.
