@@ -18,9 +18,8 @@ const Category = () => {
     const [totalPages, setTotalPages] = useState(0)
     const [isVisible, setIsVisible] = useState(false)
 
-    const menuStr = Categories.filter((item)=>(item.fetchKey === qr ))[0].menu
-    
     const fetchList = async(q, p)=> {
+        const menuStr = Categories.filter((item)=>(item.fetchKey === qr))[0].menu
         const data = await fetchData(q, p)
         setMenuText(menuStr)
         setList(prevList => prevList.concat(data.result))
