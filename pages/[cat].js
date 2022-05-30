@@ -36,7 +36,6 @@ const Category = () => {
 
     useEffect(()=>{
         if(isVisible===true){
-            console.log(page, totalPages, qr)
             if(page<totalPages){
                 setPage(prev=>prev+1)
                 fetchList(qr, page+1)
@@ -46,7 +45,6 @@ const Category = () => {
 
     useEffect(()=>{
         clean()
-        console.log(qr, list, count, page, totalPages)
         fetchList(qr, page)
     }, [qr])
 
