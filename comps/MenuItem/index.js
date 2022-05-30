@@ -1,10 +1,10 @@
+//Clickable menu item component
 import { useRouter } from "next/router"
 
 const MenuItem = ({
     menuText='Menu',
     rout='/',
 }) => {
-
     const router = useRouter()
 
     return (

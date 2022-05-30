@@ -1,14 +1,12 @@
-import ListUI from "../ListUI";
 
+// Movie detail UI
 const DetailUI = ({
     detail,
 }) => {
 
     return (
         <div className="detail_page">
-
             <div className="detail_page">
-
                 <div className="backdrop">
                     <div className="mask1">
                         <img src={`https://www.themoviedb.org/t/p/original${detail.backdrop}`}/>
@@ -20,7 +18,7 @@ const DetailUI = ({
                     <p>Rated: {detail.vote_rate}</p>
                     
                     <div className="genres">
-                        { detail.genres.map((g) => <p  key={g.id}>{g.name}</p>
+                        { detail.genres.map((g) => <p key={g.id}>{g.name}</p>
                         )}
                     </div>
                 </div>
@@ -43,9 +41,7 @@ const DetailUI = ({
                     </div>
 
                 </div>
-                
             </div>
-
         </div>
     )
 }

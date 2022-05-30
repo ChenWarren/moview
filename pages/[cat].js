@@ -8,11 +8,9 @@ import FooterUI from "../comps/FooterUI"
 import fetchData from "../data/fetchList"
 import { Categories } from "./index"
 
-const Category = () => {
-    
+const Category = () => {  
     const router =useRouter()
     const qr = router.query.cat
-
     const [list, setList] = useState([])
     const [menuText, setMenuText] = useState('Popular')
     const [page, setPage] = useState(1)
@@ -20,12 +18,10 @@ const Category = () => {
     const [totalPages, setTotalPages] = useState(0)
     const [isVisible, setIsVisible] = useState(false)
 
-    const menu = Categories.filter((item)=>(item.fetchKey === qr ))[0].menu
-    
     const fetchList = async(q, p)=> {
+        const menuStr = Categories.filter((item)=>(item.fetchKey === qr))[0].menu
         const data = await fetchData(q, p)
-        setMenuText(menu)
-        
+        setMenuText(menuStr)
         setList(prevList => prevList.concat(data.result))
         setTotalPages(data.total)
     }
@@ -39,7 +35,6 @@ const Category = () => {
 
     useEffect(()=>{
         if(isVisible===true){
-            console.log(page, totalPages, qr)
             if(page<totalPages){
                 setPage(prev=>prev+1)
                 fetchList(qr, page+1)
@@ -49,10 +44,8 @@ const Category = () => {
 
     useEffect(()=>{
         clean()
-        console.log(qr, list, count, page, totalPages)
         fetchList(qr, page)
     }, [qr])
-
 
     return (
         <div className='main-body-default'>

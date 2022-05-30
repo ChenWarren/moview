@@ -1,9 +1,9 @@
+//Home page hero showcase component
 import { useRouter } from "next/router"
 
 const ShowcaseUI = ({
-    list={title: 'Spider-Man: No Way Home'},
+    list,
 }) => {
-
     const router = useRouter()
     const path = list.backdrop_path
     

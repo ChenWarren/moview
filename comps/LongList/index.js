@@ -1,7 +1,6 @@
-
+//Movie category list UI
 import { useRouter } from 'next/router'
-import { useCallback, useEffect, useRef, useState } from 'react'
-
+import { useEffect, useRef } from 'react'
 import Card from '../Card'
 
 const LognList = ({
@@ -15,9 +14,7 @@ const LognList = ({
 }) => {
     const router = useRouter()
     const PATH = process.env.PUBLIC_URL
-
     const lastItemRef = useRef()
-
     const refCallBack = (entries) => {
         const [ entry ] = entries
         setIsVisible(entry.isIntersecting)

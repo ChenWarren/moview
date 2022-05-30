@@ -1,7 +1,5 @@
-
+// Main page horizontal list UI
 import { useRouter } from 'next/router'
-import { useCallback, useEffect, useRef, useState } from 'react'
-
 import Card from '../Card'
 
 const ListUI = ({
