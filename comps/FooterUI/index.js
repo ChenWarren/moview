@@ -1,5 +1,4 @@
-import MenuItem from "../MenuItem"
-
+// Footer UI
 const FooterUI = () => {
     return (
         <div className="footer_default">

@@ -8,11 +8,9 @@ import FooterUI from "../comps/FooterUI"
 import fetchData from "../data/fetchList"
 import { Categories } from "./index"
 
-const Category = () => {
-    
+const Category = () => {  
     const router =useRouter()
     const qr = router.query.cat
-
     const [list, setList] = useState([])
     const [menuText, setMenuText] = useState('Popular')
     const [page, setPage] = useState(1)
@@ -25,7 +23,6 @@ const Category = () => {
     const fetchList = async(q, p)=> {
         const data = await fetchData(q, p)
         setMenuText(menu)
-        
         setList(prevList => prevList.concat(data.result))
         setTotalPages(data.total)
     }
@@ -52,7 +49,6 @@ const Category = () => {
         console.log(qr, list, count, page, totalPages)
         fetchList(qr, page)
     }, [qr])
-
 
     return (
         <div className='main-body-default'>

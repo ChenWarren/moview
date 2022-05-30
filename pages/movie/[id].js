@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
-
 import HeaderUI from "../../comps/HeaderUI"
 import DetailUI from "../../comps/DetailUI"
 import ListUI from "../../comps/ListUI"
 import FooterUI from "../../comps/FooterUI"
-
 import fetchDetail from "../../data/fetchDetail"
 import fetchRelevant from "../../data/fetchRelevant"
 
 const Detail = () => {
-
     const [detail, setDetail] = useState()
     const [similar, setSimilar] = useState()
     const [recomm, setRecomm] = useState()
@@ -38,22 +35,9 @@ const Detail = () => {
         <div className='main-body-default'>
             <HeaderUI/>
             <div className='main-container'>
-                {detail && similar && recomm? 
-                    <DetailUI detail={detail} similar={similar} recomm={recomm}/> 
-                    : 
-                    null 
-                }
-                {similar? 
-                    <ListUI lists={similar} listText="Similar" displayMore="none"/>
-                    :
-                    null
-                }
-                {similar? 
-                    <ListUI lists={recomm} listText="Recommendation" displayMore="none"/>
-                    :
-                    null
-                }
-
+                {detail && similar && recomm && <DetailUI detail={detail} similar={similar} recomm={recomm}/>}
+                {similar && <ListUI lists={similar} listText="Similar" displayMore="none"/>}
+                {similar && <ListUI lists={recomm} listText="Recommendation" displayMore="none"/>}
             </div>
             <FooterUI/>
         </div>
