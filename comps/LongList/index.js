@@ -15,6 +15,7 @@ const LognList = ({
     const router = useRouter()
     const PATH = process.env.PUBLIC_URL
     const lastItemRef = useRef()
+    
     const refCallBack = (entries) => {
         const [ entry ] = entries
         setIsVisible(entry.isIntersecting)

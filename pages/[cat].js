@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useRef } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useRouter } from "next/router"
 import HeaderUI from "../comps/HeaderUI"
 import LongList from "../comps/LongList"
