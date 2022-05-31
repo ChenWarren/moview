@@ -21,27 +21,29 @@ const HeaderUI = ({
         <>
             {showMenu && <HamburgerMenu setShowing={setShowMenu}/>} 
             <div className="header_default">
-                <div className="navbar">
-                    <img 
-                        className="logo" 
-                        src="/moview_logo.svg"
-                        onClick={()=> router.push('/')}
-                    />
-                    <img
-                        className='logo-small' 
-                        src='/moview_icon.svg'
-                        onClick={()=> router.push('/')}
-                    />
-                    {!showMenu &&
-                        <div className="hamburger" onClick={handleClick}>
-                            <Image src={MenuIcon} width={30}/>
+                <div className='navbar-container'>
+                    <div className="navbar">
+                        <img 
+                            className="logo" 
+                            src="/moview_logo.svg"
+                            onClick={()=> router.push('/')}
+                        />
+                        <img
+                            className='logo-small' 
+                            src='/moview_icon.svg'
+                            onClick={()=> router.push('/')}
+                        />
+                        {!showMenu &&
+                            <div className="hamburger" onClick={handleClick}>
+                                <Image src={MenuIcon} width={30}/>
+                            </div>
+                        }
+                        
+                        <div className="menu">
+                            { Categories.map((item) => {
+                                return <MenuItem key={item.id} menuText={item.menu} rout={item.rout}/>
+                            })}
                         </div>
-                    }
-                    
-                    <div className="menu">
-                        { Categories.map((item) => {
-                            return <MenuItem key={item.id} menuText={item.menu} rout={item.rout}/>
-                        })}
                     </div>
                 </div>
             </div>
