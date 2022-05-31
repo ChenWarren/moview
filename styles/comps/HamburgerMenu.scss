@@ -1,0 +1,27 @@
+@import '../config/color.scss';
+
+.hamburger-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: $color_6;
+    position: fixed;
+    z-index: 2;
+}
+
+.row-flex-end {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+}
+
+.list-col {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-item-container {
+    width: 100%;
+}
