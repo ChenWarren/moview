@@ -2,12 +2,13 @@
 const DetailUI = ({
     detail,
 }) => {
+    const PATH = process.env.NEXT_PUBLIC_URL
     return (
         <div className="detail_page">
             <div className="detail_page">
                 <div className="backdrop">
                     <div className="mask1">
-                        <img src={`https://www.themoviedb.org/t/p/original${detail.backdrop_path}`}/>
+                        <img src={PATH+ detail.backdrop_path}/>
                         <h1>{detail.title}</h1>
                     </div>
                 </div>
