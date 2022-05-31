@@ -1,11 +1,8 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useRouter } from "next/router"
-
 import HeaderUI from "../comps/HeaderUI"
 import LongList from "../comps/LongList"
 import FooterUI from "../comps/FooterUI"
-
-import fetchData from "../data/fetchList"
 import { Categories } from "./index"
 
 const Category = () => {  
@@ -13,14 +10,14 @@ const Category = () => {
     const qr = router.query.cat
     const [list, setList] = useState([])
     const [menuText, setMenuText] = useState('Popular')
-    const [page, setPage] = useState(1)
-    const [count, setCount] = useState(1)
+    const page = useRef()
     const [totalPages, setTotalPages] = useState(0)
     const [isVisible, setIsVisible] = useState(false)
 
-    const fetchList = async(q, p)=> {
-        const menuStr = Categories.filter((item)=>(item.fetchKey === qr))[0].menu
-        const data = await fetchData(q, p)
+    const fetchList = async (q, p)=> {
+        const menuStr = Categories.filter((item)=>(item.fetchKey === q))[0].menu
+        const result = await fetch(`/api/getlist/?cat=${q}&p=${p}`)
+        const data = await result.json()
         setMenuText(menuStr)
         setList(prevList => prevList.concat(data.result))
         setTotalPages(data.total)
@@ -28,34 +25,29 @@ const Category = () => {
 
     const clean = () => {
         setList([])
-        setCount(1)
-        setPage(1)
+        page.current = 1
         setTotalPages(0)  
     }
 
     useEffect(()=>{
         if(isVisible===true){
-            if(page<totalPages){
-                setPage(prev=>prev+1)
-                fetchList(qr, page+1)
+            if(page.current<totalPages){
+                page.current++
+                fetchList(qr, page.current)
             }
         }
     },[isVisible])
 
     useEffect(()=>{
         clean()
-        fetchList(qr, page)
+        fetchList(qr, page.current)
     }, [qr])
 
     return (
         <div className='main-body-default'>
             <HeaderUI/>
             <div className='main-container'>
-                {list? 
-                    <LongList lists={list} listText={menuText} displayMore="none" isVisible={isVisible} setIsVisible={setIsVisible} setPage={setPage}/> 
-                    : 
-                    null
-                }
+                {list.length !=0 && <LongList lists={list} listText={menuText} displayMore="none" isVisible={isVisible} setIsVisible={setIsVisible}/> }
             </div>
             <FooterUI/>
         </div>

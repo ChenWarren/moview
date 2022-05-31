@@ -1,21 +1,19 @@
-
 // Movie detail UI
 const DetailUI = ({
     detail,
 }) => {
-
     return (
         <div className="detail_page">
             <div className="detail_page">
                 <div className="backdrop">
                     <div className="mask1">
-                        <img src={`https://www.themoviedb.org/t/p/original${detail.backdrop}`}/>
+                        <img src={`https://www.themoviedb.org/t/p/original${detail.backdrop_path}`}/>
                         <h1>{detail.title}</h1>
                     </div>
                 </div>
 
                 <div className="detail_head">
-                    <p>Rated: {detail.vote_rate}</p>
+                    <p>Rated: {detail.vote_average}</p>
                     
                     <div className="genres">
                         { detail.genres.map((g) => <p key={g.id}>{g.name}</p>
@@ -31,12 +29,12 @@ const DetailUI = ({
 
                     <h4>Produced by: </h4>
                     <div className="production">
-                        { detail.production.map((p) => <p key={p.id}>{p.name}</p>
+                        { detail.production_companies.map((p) => <p key={p.id}>{p.name}</p>
                         )}
                     </div>
 
                     <div className="release">
-                        <p>Release: {detail.release}</p>
+                        <p>Release: {detail.release_date}</p>
                         <p>{detail.homepage}</p>
                     </div>
 
