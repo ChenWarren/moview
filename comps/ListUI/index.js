@@ -10,7 +10,7 @@ const ListUI = ({
     wrap='card_wrap',
 }) => {
     const router = useRouter()
-    const PATH = process.env.PUBLIC_URL
+    const PATH = process.env.NEXT_PUBLIC_URL
 
     return (
         <div className='lists_wrap'>
