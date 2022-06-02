@@ -21,7 +21,9 @@ const Card = ({
 
     return (
         <div className="card">
-            <img src={imgUrl} alt={m_name} onClick={handleClick}/>
+            <div className='img-bg'>
+                <img src={imgUrl} alt={m_name} onClick={handleClick}/>
+            </div>
             <div className="overlay">
                 <h3>{title}</h3>
                 <div className="card_head">

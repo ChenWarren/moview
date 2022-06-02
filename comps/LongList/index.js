@@ -49,17 +49,33 @@ const LognList = ({
                 </div>
             </div>
             <div className={wrap}>
-                {isVisible && wrap =='card_wrap_l' ? <p>Yes</p> : null}
                 { lists.map((item, index) => {
                     if(lists.length === index +1 && wrap =='card_wrap_l'){          
                         return (
-                            <div ref={lastItemRef} key={item.id}>
-                                <Card imgUrl={PATH + item.poster_path} m_name={item.original_title} overview={item.overview} vote_rate={item.vote_average} release_date={item.release_date} title={item.title} id={item.id}/>
+                            <div ref={lastItemRef} key={index}>
+                                <Card 
+                                    imgUrl={PATH + item.poster_path} 
+                                    m_name={item.original_title} 
+                                    overview={item.overview} 
+                                    vote_rate={item.vote_average} 
+                                    release_date={item.release_date} 
+                                    title={item.title} 
+                                    id={item.id}
+                                />
                             </div>
                         )
                     } else {
                         return (
-                            <Card key={item.id} imgUrl={PATH + item.poster_path} m_name={item.original_title} overview={item.overview} vote_rate={item.vote_average} release_date={item.release_date} title={item.title} id={item.id}/> 
+                            <Card 
+                                key={index} 
+                                imgUrl={PATH + item.poster_path} 
+                                m_name={item.original_title} 
+                                overview={item.overview} 
+                                vote_rate={item.vote_average} 
+                                release_date={item.release_date} 
+                                title={item.title} 
+                                id={item.id}
+                            /> 
                         )
                     }
                 })}

@@ -13,25 +13,32 @@
     width: 300px;
     padding: 8px;
     border: none;
-    border-bottom: solid 2px $color_9;
-    background-color: $color_1;
+    border-bottom: solid 1px $color_9;
+    background: transparent;
     color: $color_10;
     font-size: 1rem;
+    opacity: 0.7;
 
     @media (max-width: 600px) {
         display: none;
     }
-
 }
 
-input[type=search]:focus{
+.search-input:focus{
     border: none;
     background-color: $color_1;
-    border-bottom: solid 2px $color_9;
+    border-bottom: solid 1px $color_9;
+    background: transparent;
     outline: none;
     color: $color_10;
+    opacity: 1;
+
+    ~ .search-icon {
+        opacity: 1;
+    }
 }
 
 .search-icon {
     padding: 8px;
+    opacity: 0.6;
 }

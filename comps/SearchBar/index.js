@@ -1,4 +1,3 @@
-import '../../public/search_icon.svg'
 
 const SearchBar = () => {
   return (
