@@ -4,6 +4,7 @@ import { useRouter } from "next/router"
 import Image from "next/image"
 import HamburgerMenu from '../HamburgerMenu'
 import MenuItem from "../MenuItem"
+import SearchBar from '../SearchBar'
 import { Categories } from "../../pages/index"
 import MenuIcon from '../../public/burger_menu.svg'
 
@@ -33,12 +34,14 @@ const HeaderUI = ({
                             src='/moview_icon.svg'
                             onClick={()=> router.push('/')}
                         />
+
+                        <SearchBar/>
+                        
                         {!showMenu &&
                             <div className="hamburger" onClick={handleClick}>
                                 <Image src={MenuIcon} width={30}/>
                             </div>
                         }
-                        
                         <div className="menu">
                             { Categories.map((item) => {
                                 return <MenuItem key={item.id} menuText={item.menu} rout={item.rout}/>
