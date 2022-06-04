@@ -3,11 +3,9 @@
 
 .lists_wrap {
     max-width: 2000px;
-    // transform: translate(0px, -100px);
     padding-bottom: 20px;
 
     @media (max-width: 600px) {
-        // transform: translate(0px, -50px);
     }
 }
 
@@ -36,13 +34,21 @@
     align-items: center;
     justify-content: space-between;
 
+    h1 {
+        font-size: 2rem;
+    }
+
     @media (max-width: 600px) {
         padding: 0 10px;
+        h1 {
+            font-size: 1.5rem;
+        }
     }
     @media (max-width: 1200px) {
         padding-left: 20px;
 
     }
+
 }
 
 .load_more {
@@ -52,6 +58,10 @@
     padding-left: 50px;
     padding-top: 10px;
     cursor: default;
+
+    @media (max-width: 600px) {
+        font-size: 1.2rem;
+    }
 
 }
 

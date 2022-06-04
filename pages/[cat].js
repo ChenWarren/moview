@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from "react"
 import { useRouter } from "next/router"
-import HeaderUI from "../comps/HeaderUI"
 import LongList from "../comps/LongList"
 import FooterUI from "../comps/FooterUI"
 import { Categories } from "./index"

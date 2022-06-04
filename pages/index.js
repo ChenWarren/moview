@@ -1,4 +1,3 @@
-import HeaderUI from '../comps/HeaderUI'
 import ShowcaseUI from '../comps/ShowcaseUI'
 import FooterUI from '../comps/FooterUI'
 import ListUI from '../comps/ListUI'
