@@ -1,4 +1,3 @@
-import HeaderUI from "../../comps/HeaderUI"
 import DetailUI from "../../comps/DetailUI"
 import ListUI from "../../comps/ListUI"
 import FooterUI from "../../comps/FooterUI"
@@ -12,7 +11,6 @@ const Detail = ({
 }) => {
     return (
         <div className='main-body-default'>
-            <HeaderUI/>
             <div className='main-container'>
                 {detail && similar && recomm && <DetailUI detail={detail} similar={similar} recomm={recomm}/>}
                 {similar && <ListUI lists={similar} listText="Similar" displayMore="none"/>}

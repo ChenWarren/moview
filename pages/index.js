@@ -1,4 +1,3 @@
-import HeaderUI from '../comps/HeaderUI'
 import ShowcaseUI from '../comps/ShowcaseUI'
 import FooterUI from '../comps/FooterUI'
 import ListUI from '../comps/ListUI'
@@ -13,7 +12,6 @@ export default function Home({
 
   return (
     <div className='main-body-default'>
-      <HeaderUI/>
       <div className='main-container'>
         <ShowcaseUI list={popularList[0]}/>
         <ListUI lists={popularList} listText='Popular' loadRout='/popular'/>
