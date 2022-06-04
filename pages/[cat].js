@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from "react"
 import { useRouter } from "next/router"
 import LongList from "../comps/LongList"
-import FooterUI from "../comps/FooterUI"
 import { Categories } from "./index"
 
 const Category = () => {  
@@ -47,7 +46,6 @@ const Category = () => {
             <div className='main-container'>
                 {list.length !=0 && <LongList lists={list} listText={menuText} displayMore="none" isVisible={isVisible} setIsVisible={setIsVisible}/> }
             </div>
-            <FooterUI/>
         </div>
     )
 }

@@ -1,5 +1,4 @@
 import ShowcaseUI from '../comps/ShowcaseUI'
-import FooterUI from '../comps/FooterUI'
 import ListUI from '../comps/ListUI'
 import fetchData from '../data/fetchList'
 
@@ -19,7 +18,6 @@ export default function Home({
         <ListUI lists={trendingList} listText='Trending' loadRout='/now_playing'/>
         <ListUI lists={upcomingList} listText='Upcoming' loadRout='/upcoming'/>
       </div>
-      <FooterUI/>
     </div>
   )
 }
