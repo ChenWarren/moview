@@ -1,6 +1,5 @@
 import DetailUI from "../../comps/DetailUI"
 import ListUI from "../../comps/ListUI"
-import FooterUI from "../../comps/FooterUI"
 import fetchDetail from "../../data/fetchDetail"
 import fetchRelevant from "../../data/fetchRelevant"
 
@@ -16,7 +15,6 @@ const Detail = ({
                 {similar && <ListUI lists={similar} listText="Similar" displayMore="none"/>}
                 {similar && <ListUI lists={recomm} listText="Recommendation" displayMore="none"/>}
             </div>
-            <FooterUI/>
         </div>
     )
 }
