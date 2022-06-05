@@ -68,7 +68,8 @@ const SearchInput = ({
                 type='text' 
                 value={searchQuery} 
                 onChange={e => setSearchQuery(e.target.value)} 
-                onKeyDown={handleEnter} 
+                onKeyDown={handleEnter}
+                onFocus={()=>setSearchQuery('')}
             />
 
             <div 
