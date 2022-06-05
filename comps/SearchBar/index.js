@@ -65,7 +65,7 @@ const SearchInput = ({
         <>
             <input 
                 className='search-input' 
-                type='search' 
+                type='text' 
                 value={searchQuery} 
                 onChange={e => setSearchQuery(e.target.value)} 
                 onKeyDown={handleEnter} 
