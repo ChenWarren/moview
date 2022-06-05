@@ -1,7 +1,7 @@
 @import '../config/color.scss';
 
 .menu_item {
-    width: 150px;
+    width: 120px;
     font-size: 1.2rem;
     display: flex;
     p {
@@ -19,9 +19,10 @@
         color: $color_7;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 1000px) {
         width: 100%;
         padding: 5px;
+        font-size: 1rem;
         p {
             text-align:center;
         }

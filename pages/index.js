@@ -42,6 +42,6 @@ export const Categories = [
   { id: 1, menu: 'Home', rout: '/', fetchKey: ''},
   { id: 2, menu: 'Popular', rout: '/popular', fetchKey: 'popular'},
   { id: 3, menu: 'Trending', rout: '/now_playing', fetchKey: 'now_playing'},
-  { id: 4, menu: 'Top-Rated', rout: '/top_rated', fetchKey: 'top_rated'},
+  { id: 4, menu: 'TopRated', rout: '/top_rated', fetchKey: 'top_rated'},
   { id: 5, menu: 'Upcoming', rout: '/upcoming', fetchKey: 'upcoming'},
 ]
