@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState, useCallback} from "react"
 import { useRouter } from "next/router"
+import Loader from "../../comps/Loader"
 import LongList from "../../comps/LongList"
 
 const SearchResult = () => {
@@ -41,17 +42,15 @@ const SearchResult = () => {
     }, [qr])
 
     return (
-        <>
-            {!isLoading && 
-                <>
-                    <div className='main-body-default'>
-                        <div className='main-container'>
-                            <LongList lists={result} listText={`Search: "${qr}"`} displayMore="none" isVisible={isTheEnd} setIsVisible={setIsTheEnd}/>
-                        </div>
-                    </div>
-                </>
+        <div className='main-body-default'>
+            {isLoading?
+                <Loader/>
+                : 
+                <div className='main-container'>
+                    <LongList lists={result} listText={`Search: "${qr}"`} displayMore="none" isVisible={isTheEnd} setIsVisible={setIsTheEnd}/>
+                </div>
             }
-        </>
+        </div>
     )
 }
 
