@@ -6,6 +6,9 @@ const nextConfig = {
     BASE_URL: process.env.BASE_URL,
     SEARCH_URL: process.env.SEARCH_URL,
     NEXT_PUBLIC_URL: process.env.NEXT_PUBLIC_URL
+  },
+  images: {
+    domains: ['www.themoviedb.org']
   }
 }
 
